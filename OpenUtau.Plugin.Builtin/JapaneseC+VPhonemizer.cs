@@ -7,7 +7,7 @@ using Serilog;
 
 namespace OpenUtau.Plugin.Builtin {
     [Phonemizer("Japanese C+V Phonemizer", "JA C+V", "GORIKORI",language:"JA")]
-    public class JapaneseCVVCPhonemizer : Phonemizer {
+    public class JapaneseC_VPhonemizer : Phonemizer {
         static readonly string[] plainVowels = new string[] {"a","i","u","e","o","n","N"};
         static readonly string[] nonVowels = new string[]{"R","-","k","ky","g","gy",
                                                            "s","sh","z","j","t","ch","ty","ts",
@@ -29,18 +29,17 @@ namespace OpenUtau.Plugin.Builtin {
 
         static readonly string[] consonants = new string[] {
             "ch=chi,che,cha,chu,cho",
-            "gy=ぎ,ぎぇ,ぎゃ,ぎゅ,ぎょ",
-            "ts=つ,つぁ,つぃ,つぇ,つぉ",
-            "ty=てぃ,てぇ,てゃ,てゅ,てょ",
-            "py=ぴ,ぴぇ,ぴゃ,ぴゅ,ぴょ",
-            "ry=り,りぇ,りゃ,りゅ,りょ",
-            "ly=リ,リェ,リャ,リュ,リョ",
-            "ny=に,にぇ,にゃ,にゅ,にょ",
-            "r=ら,る,るぃ,れ,ろ",
-            "hy=ひ,ひぇ,ひゃ,ひゅ,ひょ",
-            "dy=でぃ,でぇ,でゃ,でゅ,でょ",
-            "by=び,びぇ,びゃ,びゅ,びょ",
-            "b=ば,ぶ,ぶぃ,べ,ぼ",
+            "gy=gye,gya,gyu,gyo,gyi",
+            "ts=tsu,tsa,tsi,tse,tso",
+            "ty=tyi,tye,tya,tyu,tyo",
+            "py=pyi,pye,pya,pyu,pyo",
+            "ry=ryi,rye,ryu,rya,ryo",
+            "ny=nyi,nye,nya,nyu,nyo",
+            "r=ra,ru,ri,re,ro",
+            "hy=hyi,hye,hya,hyu,hyo",
+            "dy=dyi,dye,dyu,dya,dyo",
+            "by=byi,bye,bya,byu,byo",
+            "b=ba,bi,bu,be,bo",
             "d=だ,で,ど,どぃ,どぅ",
             "g=が,ぐ,ぐぃ,げ,ご",
             "f=ふ,ふぁ,ふぃ,ふぇ,ふぉ",
@@ -58,11 +57,9 @@ namespace OpenUtau.Plugin.Builtin {
             "w=うぃ,うぅ,うぇ,うぉ,わ,ゐ,ゑ,を,ヰ,ヱ",
             "y=いぃ,いぇ,や,ゆ,よ",
             "z=ざ,ず,ずぃ,ぜ,ぞ",
-            "dz=づ,づぃ",
             "my=み,みぇ,みゃ,みゅ,みょ",
-            "ng=ガ,ギ,グ,ゲ,ゴ,ギェ,ギャ,ギュ,ギョ,カ゜,キ゜,ク゜,ケ゜,コ゜,キ゜ェ,キ゜ャ,キ゜ュ,キ゜ョ",
-            "l=ラ,ル,レ,ロ",
-            "・=・あ,・い,・う,・え,・お,・ん,・を,・ン",
+            "l=la,li,lu,le,lo",
+            "・=・a,・i,・u,・e,・o,・n,・ng",
         };
 
         // in case voicebank is missing certain symbols
