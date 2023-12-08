@@ -10,12 +10,28 @@ namespace OpenUtau.Plugin.Builtin {
         /// The lookup table to convert a hiragana to its tail vowel.
         /// </summary>
         static readonly string[] vowels = new string[] {
-            "a=a",
-            "e=e",
-            "i=i",
-            "o=o",
+            "a=a, ka, kya, ga, gya, sa, sha, ta, tsa, tya, cha, za, ja, da, dya, ha, fa",
+            "e=e, ke, kye, ge, gye, se, she, te, tse, tye, che, ze, je, de, dye, he, fe",
+            "i=i, ki, kyi, gi, gyi, si, shi, ti, tsi, tyi, chi, ze, je, de, dye, hi, fi",
+            "o=o, ko, kyo, go, gyo, so, sho, to, tso, tyo, cho, zo, jo, do, dyo, ho, fo",
             "n=n",
-            "u=u",
+            "u=u, ku, kyu, gu, gyu, su, shu, tu, tsu, tyu, chu, zu, ju, du, dyu, hu, fu",
+            "N=ng",
+        };
+        
+        static readonly string[] consonants = new string[] {
+            "k=ka, ki, ku, ke, ko",
+            "ky=kya, kyi, kyu, kye, kyo",
+            "g=ga, gi, gu, ge, go",
+            "gy=gya, gyi, gyu, gye, gyo",
+            "s=sa, si, su, se, so",
+            "sh=sha, shi, shu, she, sho"
+            "t=ta, ti, tu, te, to"
+            "ts=tsa, tsi, tsu, tse, tso",
+            "ty=
+            "o=o, ko, kyo, go, gyo, so, sho, to, tso, tyo, cho, zo, jo, do, dyo, ho, fo",
+            "n=n",
+            "u=u, ku, kyu, gu, gyu, su, shu, tu, tsu, tyu, chu, zu, ju, du, dyu, hu, fu",
             "N=ng",
         };
 
