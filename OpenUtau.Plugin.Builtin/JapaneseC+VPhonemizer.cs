@@ -40,8 +40,8 @@ namespace OpenUtau.Plugin.Builtin {
             "dy=dyi,dye,dyu,dya,dyo",
             "by=byi,bye,bya,byu,byo",
             "b=ba,bi,bu,be,bo",
-            "d=だ,で,ど,どぃ,どぅ",
-            "g=が,ぐ,ぐぃ,げ,ご",
+            "d=da,de,do,di,du",
+            "g=ga,gu,gi,ge,go",
             "f=ふ,ふぁ,ふぃ,ふぇ,ふぉ",
             "h=は,はぃ,へ,ほ,ほぅ",
             "k=か,く,くぃ,け,こ",
@@ -71,7 +71,7 @@ namespace OpenUtau.Plugin.Builtin {
         static readonly Dictionary<string, string> consonantLookup;
         static readonly Dictionary<string, string> substituteLookup;
 
-        static JapaneseCVVCPhonemizer() {
+        static JapaneseC_VPhonemizer() {
             vowelLookup = vowels.ToList()
                 .SelectMany(line => {
                     var parts = line.Split('=');
@@ -239,11 +239,11 @@ namespace OpenUtau.Plugin.Builtin {
                     };
                 }
 
-                var vcPhoneme = $"{vowel} {consonant}";
+                var vcPhoneme = $"{consonant}";
                 var vcPhonemes = new string[] {vcPhoneme, ""};
                 // find potential substitute symbol
                 if (substituteLookup.TryGetValue(consonant ?? string.Empty, out con)){
-                        vcPhonemes[1] = $"{vowel} {con}";
+                        vcPhonemes[1] = $"{con}";
                 }
                 //if (singer.TryGetMappedOto(vcPhoneme, note.tone + attr0.toneShift, attr0.voiceColor, out var oto1)) {
                 if (checkOtoUntilHitVc(vcPhonemes, note, out var oto1)) {
